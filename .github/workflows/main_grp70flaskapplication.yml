@@ -61,6 +61,9 @@ jobs:
         with:
           name: python-app
 
+      - name: Wait for 30 seconds to avoid conflicts
+        run: sleep 30
+
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
