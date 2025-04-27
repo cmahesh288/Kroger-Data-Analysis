@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #fff;
+        }
+        .btn-primary {
+            background-color: #222;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #fff;
+            border: 1px solid #222;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-end">
+        <a class="btn btn-primary mt-3 me-2" href="{{ url_for('logout')}}">Logout</a>
+    </div>
+
+    <h1 class="text-center mt-5">Welcome {{ username }}</h1>
+
+    <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
+        <a class="btn btn-primary btn-lg me-3 mb-3" href="{{ url_for('dashboard')}}">Dashboard</a>
+        <a class="btn btn-primary btn-lg me-3 mb-3" href="{{ url_for('Search')}}">Search Data</a>
+        <a class="btn btn-primary btn-lg mb-3" href="{{ url_for('upload')}}">Upload Data</a>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+

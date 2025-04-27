@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #fff;
+        }
+        .container {
+            max-width: 400px;
+            margin-top: 100px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #222;
+        }
+        .card-body {
+            padding: 30px;
+        }
+        .btn-primary {
+            background-color: #222;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #fff;
+            color: #222;
+            border: 1px solid #222;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2>LOGIN</h2>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('homepage') }}" method="post">
+                    <div>{{ msg }}</div>
+                    <div class="form-group">
+                        <label for="username"><b>Username</b></label>
+                        <input id="username" name="username" type="text" class="form-control"
+                            placeholder="Enter Your Username" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><b>Password</b></label>
+                        <input id="password" name="password" type="password" class="form-control"
+                            placeholder="Enter Your Password" required />
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-block" value="Sign In">
+                    <br />
+                    <p class="text-center">Don't have an account? <a href="{{ url_for('register')}}">Register Here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

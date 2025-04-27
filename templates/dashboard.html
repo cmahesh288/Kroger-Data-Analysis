@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- Custom CSS -->
+	<style>
+	.navbar-dark .navbar-toggler
+	{
+    color: #ff;
+    border-color: #222;
+	}
+	.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link
+	{
+    color: #fff;
+	}
+	.navbar-dark .navbar-nav .nav-link
+	{
+    color: #ff;
+	}
+	.bg-dark {
+		background-color: #222 !important;
+	}
+	.navbar-dark .navbar-brand {
+    color: #fff;
+	}
+	navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+    color: #fff;
+	}
+	.btn-outline-light
+	{
+            background-color: #222;
+            border: none;
+    }
+    .btn-outline-light:hover
+	{
+            background-color: #fff;
+            color: #222;
+    }
+    #navbar-list{
+        display: flex;
+        width: 400px;
+        flex-direction: row;
+        text-decoration: none;
+        justify-content: space-around;
+    }
+
+    .navbar-div{
+        display: flex;
+        padding-top: 15px;
+
+    }
+    #nav{
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        height: 70px !important;
+    }
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark" id="nav">
+		<a class="navbar-brand" href="#">Dashboard</a>
+		<div  id="navbarNav" class="navbar-div">
+			<ul  class="navbar-nav mr-auto" id="navbar-list">
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ url_for('dashboard')}}">Dashboard</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('Search')}}">SearchData</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('upload')}}">Upload Data</a>
+				</li>
+			</ul>
+			<a class="btn btn-outline-light" href="{{ url_for('homepage')}}">Logout</a>
+		</div>
+	</nav>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <div class='tableauPlaceholder' id='viz1745714655429' style='position: relative'><noscript><a href='#'><img alt='Kroger data analysis by Grp 70 (Teja and Chandra) ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Kr&#47;KrogerAnalysisTejaandChandra&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='KrogerAnalysisTejaandChandra&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Kr&#47;KrogerAnalysisTejaandChandra&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1745714655429');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else { vizElement.style.width='100%';vizElement.style.height='1277px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</body>
+</html>
+
+
