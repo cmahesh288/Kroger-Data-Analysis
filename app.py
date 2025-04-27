@@ -32,7 +32,7 @@ CONN_STR = (
     f"SERVER={DB_SERVER},1433;"
     f"DATABASE={DB_NAME};"
     f"UID={DB_USER};PWD={DB_PASS};"
-    "Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+    "Encrypt=yes;TrustServerCertificate=yes;Connection Timeout=120;"
 )
 
 def get_conn():
