@@ -42,7 +42,7 @@
     }
     #navbar-list{
         display: flex;
-        width: 400px;
+        width: 600px;
         flex-direction: row;
         text-decoration: none;
         justify-content: space-around;
@@ -74,6 +74,12 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{ url_for('upload')}}">Upload Data</a>
+				</li>
+                <li class="nav-item">
+					<a class="nav-link" href="{{ url_for('analysis_churn')}}">Churn Analysis</a>
+				</li>
+                <li class="nav-item">
+					<a class="nav-link" href="{{ url_for('analysis_basket')}}">Basket Analysis</a>
 				</li>
 			</ul>
 			<a class="btn btn-outline-light" href="{{ url_for('homepage')}}">Logout</a>

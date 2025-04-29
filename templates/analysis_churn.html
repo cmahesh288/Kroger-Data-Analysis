@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Churn Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #fff;
+        }
+        .btn-primary {
+            background-color: #222;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #fff;
+            color: #222;
+            border: 1px solid #222;
+        }
+        .bg-dark {
+            background-color: #222 !important;
+        }
+        .btn-secondary{
+            background-color: #222;
+            color: #fff;
+            border: none;
+        }
+        .btn-secondary:hover {
+            background-color: #fff;
+            color: #222;
+            border: 1px solid #222;
+        }
+        .navbar-brand{
+            color: #a7b3b9;
+        }
+        .nav-item{
+            color: #a7b3b9;
+        }
+        #navbarNav{
+            display: flex;
+            justify-content: end;
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Churn Analysis</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('dashboard')}}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('Search')}}">Search Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('upload')}}">Upload Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('analysis_churn')}}">Churn Analysis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('analysis_basket')}}">Basket Analysis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-secondary" href="{{ url_for('logout')}}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+
+  <!-- top-of-page quick-links -->
+
+
+  <h2 class="mb-4">Churn Model Results</h2>
+
+  {% if image %}
+    <img
+      src="{{ url_for('static', filename=image) }}"
+      alt="Churn Distribution"
+      class="img-fluid mb-3 shadow-sm"
+    >
+  {% else %}
+    <p class="text-muted"><em>No chart available.</em></p>
+  {% endif %}
+
+{#  <h4>Classification Report</h4>#}
+{#  {% if report %}#}
+{#    <table class="table table-bordered table-striped table-sm">#}
+{#      <thead class="table-dark">#}
+{#        <tr>#}
+{#          <th>Class</th>#}
+{#          <th>Precision</th>#}
+{#          <th>Recall</th>#}
+{#          <th>F1-Score</th>#}
+{#          <th>Support</th>#}
+{#        </tr>#}
+{#      </thead>#}
+{#      <tbody>#}
+{#        {% for cls, metrics in report.items()#}
+{#              if cls not in ['accuracy','macro avg','weighted avg'] %}#}
+{#          <tr>#}
+{#            <td>{{ cls }}</td>#}
+{#            <td>{{ metrics.precision   |default(0)|round(2) }}</td>#}
+{#            <td>{{ metrics.recall      |default(0)|round(2) }}</td>#}
+{#            <td>{{ metrics['f1-score'] |default(0)|round(2) }}</td>#}
+{#            <td>{{ metrics.support     |default(0) }}</td>#}
+{#          </tr>#}
+{#        {% endfor %}#}
+{#      </tbody>#}
+{#    </table>#}
+{#  {% else %}#}
+{#    <p class="text-muted"><em>No classification report to show.</em></p>#}
+{#  {% endif %}#}
+
+</div>
+</body>
+</html>
